@@ -1,0 +1,19 @@
+{
+  "name": "big-wall-bot",
+  "version": "1.0.0",
+  "description": "A basic template for creating bot projects.",
+  "main": "src/index.js",
+  "author": "@gabriel21henrique",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "puppeteer": "^3.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.3"
+  }
+}
