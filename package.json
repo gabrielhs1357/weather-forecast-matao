@@ -1,15 +1,19 @@
 {
-  "name": "big-wall-bot",
+  "name": "weather-forecast-matao",
   "version": "1.0.0",
-  "description": "A basic template for creating bot projects.",
+  "description": "An application that tweets every 1 hour a new weather forecast for Matão city",
   "main": "src/index.js",
   "author": "@gabriel21henrique",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "cron": "^1.8.2",
     "dotenv": "^8.2.0",
+    "moment": "^2.26.0",
     "puppeteer": "^3.0.1"
   },
   "devDependencies": {
