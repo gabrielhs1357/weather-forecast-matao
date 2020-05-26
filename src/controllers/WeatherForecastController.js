@@ -1,6 +1,6 @@
 const axios = require('axios').default;
 const weatherForecastBot = require('../bot/weatherForecast');
-const moment = require('moment');
+const moment = require('moment-timezone');
 
 module.exports = {
   async getWeatherForecastAndTweet() {
@@ -10,7 +10,7 @@ module.exports = {
       const description = response.weather[0].description;
       const temp = response.main.temp;
 
-      let header = `${moment().format('DD/MM/YYYY')}, ${moment().format('HH:mm')} - Matão, SP - ${description.charAt(0).toUpperCase() + description.slice(1)}, ${Math.trunc(temp)} °C`;
+      let header = `${moment().tz('America/Sao_Paulo').format('DD/MM/YYYY')}, ${moment().tz('America/Sao_Paulo').format('HH:mm')} - Matão, SP - ${description.charAt(0).toUpperCase() + description.slice(1)}, ${Math.trunc(temp)} °C`;
 
       await weatherForecastBot.tweet(header);
     } catch (error) {

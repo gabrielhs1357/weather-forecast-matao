@@ -2,6 +2,9 @@ require('dotenv/config');
 const weatherForecastBot = require('./bot/weatherForecast');
 const weatherForecastController = require('./controllers/WeatherForecastController');
 var CronJob = require('cron').CronJob;
+const http = require('http');
+
+http.createServer().listen(process.env.PORT || 8080);
 
 (async () => {
   await weatherForecastBot.initialize();
@@ -9,7 +12,7 @@ var CronJob = require('cron').CronJob;
   await weatherForecastBot.login(process.env.USER, process.env.PASSWORD);
 
   var tweetJob = new CronJob(
-    '*/30 * * * *',
+    '0 * * * *',
     function () {
       weatherForecastController.getWeatherForecastAndTweet();
     },

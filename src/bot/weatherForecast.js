@@ -7,15 +7,20 @@ const weatherForecast = {
   initialize: async () => {
     weatherForecast.browser = await puppeteer.launch({
       headless: true,
-      args: ['--start-maximized'],
+      args: ['--start-maximized', '--no-sandbox'],
       defaultViewport: { width: 1920, height: 1080 }
     });
 
     weatherForecast.page = await weatherForecast.browser.newPage();
 
-    await weatherForecast.page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36');
-
     // weatherForecast.page.on('console', msg => console.log('PAGE LOG:', msg.text()));
+  },
+
+  loginVerify: async () => {
+    //Types the phone number
+    await weatherForecast.page.type('#challenge_response', process.env.PHONE_NUMBER);
+    //Types on "Submit" button
+    await weatherForecast.page.click('#email_challenge_submit');
   },
 
   login: async (user, password) => {
@@ -26,18 +31,21 @@ const weatherForecast = {
     // await weatherForecast.page.evaluate(() => console.log(`url is ${location.href}`));
 
     //Types the user
-    await weatherForecast.page.type('#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > form > div > div:nth-child(6) > label > div > div.css-1dbjc4n.r-18u37iz.r-16y2uox.r-1wbh5a2.r-1udh08x > div > input', user, { delay: 50 });
+    await weatherForecast.page.type('#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > form > div > div:nth-child(6) > label > div > div.css-1dbjc4n.r-18u37iz.r-16y2uox.r-1wbh5a2.r-1udh08x > div > input', user);
     //Types the password
-    await weatherForecast.page.type('#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > form > div > div:nth-child(7) > label > div > div.css-1dbjc4n.r-18u37iz.r-16y2uox.r-1wbh5a2.r-1udh08x > div > input', password, { delay: 50 });
+    await weatherForecast.page.type('#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > form > div > div:nth-child(7) > label > div > div.css-1dbjc4n.r-18u37iz.r-16y2uox.r-1wbh5a2.r-1udh08x > div > input', password);
     //Clicks on login button  
     await weatherForecast.page.click('#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > form > div > div:nth-child(8) > div > div');
 
-    await weatherForecast.page.waitForNavigation({
-      waitUntil: 'networkidle2'
-    });
+    await weatherForecast.page.waitFor(1000); // Waits for 1000ms
+
+    if (weatherForecast.page.url().split('?')[0] === 'https://twitter.com/account/login_challenge') await weatherForecast.loginVerify();
+
+    await weatherForecast.page.waitFor(1000); // Waits for 1000ms
   },
 
   tweet: async (message) => {
+
     //Clicks on "Tweet"
     await weatherForecast.page.click('#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > header > div > div > div > div.css-1dbjc4n.r-1habvwh > div.css-1dbjc4n.r-vpgt9t.r-e7q0ms > a > div');
 

@@ -13,7 +13,7 @@
     "axios": "^0.19.2",
     "cron": "^1.8.2",
     "dotenv": "^8.2.0",
-    "moment": "^2.26.0",
+    "moment-timezone": "^0.5.31",
     "puppeteer": "^3.0.1"
   },
   "devDependencies": {
