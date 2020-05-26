@@ -4,7 +4,10 @@ const weatherForecastController = require('./controllers/WeatherForecastControll
 var CronJob = require('cron').CronJob;
 const http = require('http');
 
-http.createServer().listen(process.env.PORT || 8080);
+http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.end();
+}).listen(process.env.PORT || 8080);
 
 (async () => {
   await weatherForecastBot.initialize();
