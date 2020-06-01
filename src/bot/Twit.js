@@ -10,9 +10,9 @@ var T = new Twit({
 module.exports = {
   tweet: (message) => {
     T.post('statuses/update', { status: message }, function (err, data, response) {
-      if (err) console.log('Error:', err);
-      if (data) console.log('Success:', data);
-      if (response) console.log('Response:', response);
+      if (err) return console.log('Error:', err);
+      return console.log('Success:', data);
+      // if (response) console.log('Response:', response);
     });
   }
 };

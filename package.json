@@ -14,7 +14,7 @@
     "cron": "^1.8.2",
     "dotenv": "^8.2.0",
     "moment-timezone": "^0.5.31",
-    "puppeteer": "^3.0.1"
+    "twit": "^2.2.11"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
