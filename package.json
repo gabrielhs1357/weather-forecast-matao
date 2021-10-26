@@ -1,7 +1,7 @@
 {
   "name": "weather-forecast-matao",
   "version": "1.0.0",
-  "description": "An application that tweets every 1 hour a new weather forecast for Matão city.",
+  "description": "An application that posts every 1 hour the weather of Matão/SP city on Twitter.",
   "main": "src/index.js",
   "author": "@gabrielhs1357",
   "license": "MIT",
