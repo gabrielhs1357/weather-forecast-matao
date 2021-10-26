@@ -10,7 +10,7 @@
 
 > Don't forget the umbrella anymore!
 
-<p align="center"><img src=".github/weather-forecast-matao.jpg?raw=true" width="1000"/></p>
+<p align="center"><img src=".github/weather-forecast-matao.png?raw=true" width="1000"/></p>
 
 ---
 
