@@ -27,7 +27,7 @@
 
 ## :computer: Technologies
 
-- [Node.js](https://nodejs.org/en), [Cron](https://github.com/kelektiv/node-cron), [Moment Timezone](https://github.com/moment/moment-timezone), [Twit](https://github.com/ttezel/twit).
+- [Node.js](https://nodejs.org/en), [Cron](https://github.com/kelektiv/node-cron), [Moment Timezone](https://github.com/moment/moment-timezone) and [Twit](https://github.com/ttezel/twit).
 
 ## :construction_worker: Getting Started
 
