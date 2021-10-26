@@ -10,7 +10,7 @@ module.exports = {
       const description = response.weather[0].description;
       const temp = response.main.temp;
 
-      const currentWeather = `${moment().tz('America/Sao_Paulo').format('DD/MM/YYYY')}, ${moment().tz('America/Sao_Paulo').format('HH:mm')} - Matão, SP - ${description.charAt(0).toUpperCase() + description.slice(1)}, ${Math.trunc(temp)} °C`;
+      const currentWeather = `[${moment().tz('America/Sao_Paulo').format('DD/MM/YY')}, ${moment().tz('America/Sao_Paulo').format('HH:mm')}] ${description.charAt(0).toUpperCase() + description.slice(1)}, ${Math.trunc(temp)} °C`;
 
       await Twit.tweet(currentWeather);
     } catch (error) {
