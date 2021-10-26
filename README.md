@@ -60,7 +60,7 @@
 
 ## :closed_book: License
 
-This project is under the [MIT license](https://github.com/gabrielhs1357/kennel-manager-system/blob/master/LICENSE).
+This project is under the [MIT license](https://github.com/gabrielhs1357/weather-forecast-matao/blob/master/LICENSE).
 
 ---
 
