@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/github/license/gabrielhs1357/weather-forecast-matao?color=4855B7&style=flat-square)](https://github.com/gabrielhs1357/weather-forecast-matao/blob/main/LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/gabrielhs1357/weather-forecast-matao?color=4855B7&style=flat-square)](https://github.com/gabrielhs1357/weather-forecast-matao/commits/main)
 
-> Don't forget the umbrella anymore!
+> Find me at @previsaomatao on Twitter and don't forget the umbrella anymore!
 
 <p align="center"><img src=".github/weather-forecast-matao.png?raw=true" width="1000"/></p>
 
